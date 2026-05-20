@@ -1,6 +1,6 @@
 ---
 name: neuroscience-database-lookup
-description: Search and retrieve public neuroscience datasets and educational anatomy resources. Covers OpenNeuro BIDS datasets, OSF neuroscience projects/files, clinical EEG and TDBRAIN resources, Human Connectome Project data, BRAVA brain arterial reconstruction data, NITRC ICBM MRA atlas data, Oliva Lab visual cognition and neuroimaging datasets, standardized visual stimuli, eye-tracking resources, TEMCA2/FAFB fly brain EM connectomics data, and BrainFacts 3D Brain anatomy pages. Use when looking up neuroscience datasets, EEG/fMRI/MEG/MRA/EM data, visual cognition stimulus datasets, brain anatomy teaching material, or dataset download/access instructions.
+description: Search and retrieve public neuroscience datasets and educational anatomy resources. Covers OpenNeuro BIDS datasets, OSF neuroscience projects/files, general repositories such as Figshare, Dryad, Harvard Dataverse, Science Data Bank, and Zenodo, data descriptor article fallback via journals such as Scientific Data, clinical EEG and TDBRAIN resources, Human Connectome Project data, BRAVA brain arterial reconstruction data, NITRC ICBM MRA atlas data, Oliva Lab visual cognition and neuroimaging datasets, standardized visual stimuli, eye-tracking resources, TEMCA2/FAFB fly brain EM connectomics data, and BrainFacts 3D Brain anatomy pages. Use when looking up neuroscience datasets, EEG/fMRI/MEG/MRA/EM data, visual cognition stimulus datasets, brain anatomy teaching material, or dataset download/access instructions.
 metadata:
   skill-author: local
 ---
@@ -21,6 +21,8 @@ Use this skill to find, inspect, and retrieve neuroscience datasets or brain ana
    - Raw JSON when available, or a concise structured extraction from HTML
    - Any access, license, citation, or manual-download restriction
 
+Priority rule: direct dataset/database links outrank articles. If no direct dataset record is found, use data descriptor or primary articles as an `Article fallback`, especially Scientific Data Data Descriptors, and extract data availability statements, repository DOIs, accession IDs, and usage/citation notes.
+
 ## Resource Selection Guide
 
 | User is asking about... | Primary resource(s) | Also consider |
@@ -31,6 +33,9 @@ Use this skill to find, inspect, and retrieve neuroscience datasets or brain ana
 | Parkinson disease EEG, timing, cognitive control, frontal theta | Narayanan Lab via Clinical EEG and Big Data | OpenNeuro, OSF |
 | A specific OpenNeuro accession such as `ds004584` | OpenNeuro | OSF if linked by paper/project |
 | General project materials, preregistrations, files, protocols | OSF | OpenNeuro for BIDS imaging |
+| Broad repository search, paper-linked datasets, DOI lookup, uncertain source | General Data Repositories and Data Articles | OSF, OpenNeuro, Scientific Data |
+| Figshare, Dryad, Harvard Dataverse, Science Data Bank, Zenodo | General Data Repositories and Data Articles | Data descriptor journals |
+| Scientific Data or data descriptor article lookup | General Data Repositories and Data Articles | Direct repository search first |
 | Human connectomics, structural/diffusion MRI, HCP data | Human Connectome Project | OpenNeuro, EBRAINS |
 | Brain arterial trees or vascular morphology | BRAVA | NITRC ICBM MRA |
 | Human magnetic resonance angiography atlas, NIfTI MRA data | NITRC ICBM MRA | BRAVA |
@@ -46,6 +51,7 @@ Use this skill to find, inspect, and retrieve neuroscience datasets or brain ana
 
 - `references/openneuro.md` - OpenNeuro GraphQL, openneuro-cli, DataLad, and ds004584 example.
 - `references/osf.md` - OSF API v2 nodes, files, registrations, and public project lookup.
+- `references/general-data-repositories-and-data-articles.md` - Figshare, Dryad, Harvard Dataverse, Science Data Bank, Zenodo, DOI patterns, and Scientific Data/article fallback workflow.
 - `references/clinical-eeg-and-big-data.md` - TDBRAIN, MSU EEG links, Narayanan Lab datasets, and 5 V dataset evaluation guidance from the big-data review article.
 - `references/human-connectome-project.md` - Human Connectome Project, ConnectomeDB, access routes, and citation/access notes.
 - `references/brava.md` - BRAVA all-subject browser, subject pages, SWC download, vascular metrics.
@@ -62,6 +68,11 @@ Use this skill to find, inspect, and retrieve neuroscience datasets or brain ana
 | OpenNeuro dataset accession | `ds004584` | OpenNeuro |
 | OpenNeuro DOI | `10.18112/openneuro.ds004584.v1.0.0` | OpenNeuro |
 | OSF node/project ID | `q4mez`, `sfbpx` | OSF |
+| Figshare DOI | `10.6084/m9.figshare.32336397.v1` | Figshare |
+| Dryad DOI | `10.5061/dryad.76hdr7t80` | Dryad |
+| Harvard Dataverse DOI | `10.7910/DVN/2RKAQP` | Harvard Dataverse |
+| Zenodo DOI | `10.5281/zenodo.6860680` | Zenodo |
+| ScienceDB DOI/CSTR | `10.11922/sciencedb...` | Science Data Bank |
 | TDBRAIN DOI/Synapse ID | `10.70303/syn25671079`, `syn25671079` | TDBRAIN/Synapse |
 | NITRC group ID | `1113` | NITRC ICBM MRA |
 | NITRC file ID | `9725` | NITRC ICBM MRA |
@@ -75,6 +86,12 @@ Use this skill to find, inspect, and retrieve neuroscience datasets or brain ana
 |---|---|---|
 | OpenNeuro | GraphQL, openneuro-cli, DataLad, browser | Public browse/download without account for public datasets |
 | OSF | JSON:API REST API, browser | Public read without token; token for private/write access |
+| Figshare | Web search, POST search API, public item API | Public metadata/download for open records; license varies |
+| Dryad | Web search, JSON API | Public metadata/download for published datasets; license usually visible |
+| Harvard Dataverse | Web search, Search API | Public metadata/download for released datasets; restricted files vary |
+| Science Data Bank / ScienceDB | Web search; verify current scripting options | Public/restricted varies; verify DOI/CSTR and access status |
+| Zenodo | Web search, REST records API | Public metadata/download for open records; restricted/embargoed records may require request |
+| Scientific Data and data descriptor journals | Article pages, data availability statements, repository links | Article is fallback; repository link remains priority |
 | TDBRAIN | Brainclinics/Synapse downloads, code repository | Registration and Data Use Agreement |
 | Human Connectome Project | ConnectomeDB, HCP Data Archive, LONI/NDA routes depending on cohort | Registration and data-use terms; restricted data require approval |
 | Narayanan Lab | HTML catalog linking to OSF, OpenNeuro, PubMed, Dropbox, Bitly | Varies by linked resource |
@@ -108,6 +125,13 @@ curl -L -s "http://cng.gmu.edu/brava/all_subjects.php?clear=1" |
   rg "query_subject.php|swc_files.zip|metrics.php"
 ```
 
+For general repository search, read `references/general-data-repositories-and-data-articles.md` and run several repository queries before falling back to articles. Example:
+
+```bash
+curl -s "https://zenodo.org/api/records?q=neuroscience%20EEG&type=dataset&size=5"
+curl -s "https://dataverse.harvard.edu/api/search?q=neuroscience&type=dataset&per_page=5"
+```
+
 ## Output Format
 
 Use this shape:
@@ -116,6 +140,7 @@ Use this shape:
 - `## Results`
 - One subsection per resource, with raw JSON in a fenced `json` block when available.
 - `## Access Notes`, including license, citation, download method, and file formats.
+- `## Article Fallback`, only when no direct dataset link was found; include the article DOI, data availability statement, and any repository/accession clues.
 
 For large file lists, summarize the first page and include pagination or recursive download instructions.
 

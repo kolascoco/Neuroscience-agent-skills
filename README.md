@@ -14,7 +14,7 @@ Think of this repo as a field kit for research agents.
 
 | Skill | What it helps with | Status |
 |---|---|---|
-| `neuroscience-database-lookup` | Search public neuroscience datasets and educational anatomy resources across OpenNeuro, OSF, TDBRAIN, HCP, BRAVA, NITRC, Oliva Lab, visual stimulus/eye-tracking resources, TEMCA2/FAFB, and BrainFacts 3D Brain. | Ready |
+| `neuroscience-database-lookup` | Search public neuroscience datasets and educational anatomy resources across OpenNeuro, OSF, Figshare, Dryad, Harvard Dataverse, Science Data Bank, Zenodo, TDBRAIN, HCP, BRAVA, NITRC, Oliva Lab, visual stimulus/eye-tracking resources, TEMCA2/FAFB, and BrainFacts 3D Brain. | Ready |
 | `tms-eeg-preprocessing-consultant` | Plan, explain, and code TMS-EEG preprocessing workflows for TEP/GMFA/LMFP and immediate TEP/i-TEP analysis, with Context7-first/GitHub-fallback software lookup and artifact-aware QC cards. | Draft |
 
 ## First Skill: Neuroscience Database Lookup
@@ -23,6 +23,8 @@ The included `neuroscience-database-lookup` skill helps agents retrieve and summ
 
 - BIDS datasets from OpenNeuro
 - EEG, MEG, fMRI, MRI, PET, iEEG, and MRA datasets
+- General repository search across Figshare, Dryad, Harvard Dataverse, Science Data Bank, and Zenodo
+- Data descriptor article fallback through sources such as Scientific Data when a direct dataset link cannot be found
 - Clinical EEG resources including TDBRAIN, MSU EEG links, and Parkinson/cognition datasets from Narayanan Lab
 - Human Connectome Project access routes and connectomics resources
 - OSF neuroscience projects, files, registrations, and protocols
@@ -47,6 +49,7 @@ The skill emphasizes exact source links, API endpoints, access notes, licensing,
         ├── brainfacts-3d-brain.md
         ├── brava.md
         ├── clinical-eeg-and-big-data.md
+        ├── general-data-repositories-and-data-articles.md
         ├── human-connectome-project.md
         ├── nitrc-icbmmra.md
         ├── oliva-lab.md
