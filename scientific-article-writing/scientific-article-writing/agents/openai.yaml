@@ -1,0 +1,4 @@
+interface:
+  display_name: "Scientific Article Writing"
+  short_description: "Plan, draft, and audit a submission-ready empirical article"
+  default_prompt: "Use $scientific-article-writing to help me write my article from the attached research materials."

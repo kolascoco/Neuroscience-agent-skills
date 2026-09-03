@@ -1,0 +1,394 @@
+{
+  "schema_version": "1.0",
+  "model_name": "high-impact-empirical-neuroscience",
+  "built": "2026-09-02",
+  "protocol": "Select -> Segment -> Label functions -> Compare -> Generalize -> Validate -> Version",
+  "sources": [
+    {
+      "locator": "10.1016/j.neuron.2017.06.041",
+      "venue": "Neuron",
+      "article_type": "full article",
+      "year": 2017,
+      "reason": "theory-first introduction with numbered hypotheses tested in Results order"
+    },
+    {
+      "locator": "10.1016/j.cub.2020.02.065",
+      "venue": "Current Biology",
+      "article_type": "short report",
+      "year": 2020,
+      "reason": "merged Results and Discussion; interventional design with causal language"
+    },
+    {
+      "locator": "10.1038/s41467-023-36805-5",
+      "venue": "Nature Communications",
+      "article_type": "article",
+      "year": 2023,
+      "reason": "short conceptual abstract; exploratory analyses labeled; extended discussion"
+    },
+    {
+      "locator": "10.1162/imag_a_00349",
+      "venue": "Imaging Neuroscience",
+      "article_type": "research article",
+      "year": 2024,
+      "reason": "numbered IMRaD with separate Limitations, Implications, Conclusions; three-experiment replication structure"
+    }
+  ],
+  "sections": {
+    "title": {
+      "functions": [
+        {
+          "name": "state the finding, phenomenon, or characterization in ten to fifteen words",
+          "evidence": ["10.1016/j.neuron.2017.06.041 title", "10.1016/j.cub.2020.02.065 title", "10.1038/s41467-023-36805-5 title", "10.1162/imag_a_00349 title"],
+          "confidence": "high",
+          "exceptions": ["declarative-claim form used only with an interventional design"]
+        },
+        {
+          "name": "signal design strength only when the design supports it",
+          "evidence": ["10.1016/j.cub.2020.02.065 title"],
+          "confidence": "medium",
+          "exceptions": ["observational papers use noun or gerund phrases without causal words"]
+        }
+      ]
+    },
+    "abstract": {
+      "functions": [
+        {
+          "name": "establish context in one or two sentences",
+          "evidence": ["10.1016/j.neuron.2017.06.041 summary", "10.1016/j.cub.2020.02.065 summary", "10.1038/s41467-023-36805-5 abstract", "10.1162/imag_a_00349 abstract"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "state the unresolved question with a contrast marker",
+          "evidence": ["10.1038/s41467-023-36805-5 abstract", "10.1162/imag_a_00349 abstract", "10.1016/j.cub.2020.02.065 summary"],
+          "confidence": "high",
+          "exceptions": ["theory-driven summary states the approach immediately after context"]
+        },
+        {
+          "name": "state what this study did, marking the present study with a locative opener",
+          "evidence": ["10.1016/j.cub.2020.02.065 summary", "10.1038/s41467-023-36805-5 abstract", "10.1162/imag_a_00349 abstract"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "report specific directional findings naming which system did what",
+          "evidence": ["10.1016/j.neuron.2017.06.041 summary", "10.1016/j.cub.2020.02.065 summary", "10.1038/s41467-023-36805-5 abstract", "10.1162/imag_a_00349 abstract"],
+          "confidence": "high",
+          "exceptions": ["numbers, n, and latencies appear only in the long methods-focused abstract"]
+        },
+        {
+          "name": "close with a synthesizing conclusion and an implication",
+          "evidence": ["10.1016/j.neuron.2017.06.041 summary", "10.1016/j.cub.2020.02.065 summary", "10.1038/s41467-023-36805-5 abstract", "10.1162/imag_a_00349 abstract"],
+          "confidence": "high",
+          "exceptions": ["implication sentence is explicit only in the methods-focused abstract"]
+        }
+      ]
+    },
+    "highlights": {
+      "functions": [
+        {
+          "name": "four one-line findings and a third-person blurb",
+          "evidence": ["10.1016/j.neuron.2017.06.041 highlights", "10.1016/j.cub.2020.02.065 highlights"],
+          "confidence": "medium",
+          "exceptions": ["Cell Press venues only"]
+        }
+      ]
+    },
+    "introduction": {
+      "functions": [
+        {
+          "name": "open with a concrete readable sentence about the phenomenon, not a universal importance claim",
+          "evidence": ["10.1016/j.neuron.2017.06.041 introduction p1", "10.1038/s41467-023-36805-5 introduction p1", "10.1162/imag_a_00349 introduction p1", "10.1016/j.cub.2020.02.065 results-and-discussion p1"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "synthesize prior work by idea with grouped citations",
+          "evidence": ["10.1016/j.neuron.2017.06.041 introduction p2-p3", "10.1038/s41467-023-36805-5 introduction p2-p3", "10.1162/imag_a_00349 introduction p2"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "frame the unresolved issue as competing accounts or a limitation of prior methods",
+          "evidence": ["10.1038/s41467-023-36805-5 introduction p3-p4", "10.1016/j.neuron.2017.06.041 introduction p2-p3", "10.1162/imag_a_00349 introduction p3", "10.1016/j.cub.2020.02.065 results-and-discussion p1"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "state the present study's aim, approach, and explicit predictions",
+          "evidence": ["10.1038/s41467-023-36805-5 introduction final", "10.1162/imag_a_00349 introduction final", "10.1016/j.neuron.2017.06.041 introduction final", "10.1016/j.cub.2020.02.065 results-and-discussion p2"],
+          "confidence": "high",
+          "exceptions": ["numbered hypotheses in two papers; conditional if-then predictions in one"]
+        },
+        {
+          "name": "propose a unified theory with a schematic before testing it",
+          "evidence": ["10.1016/j.neuron.2017.06.041 introduction and figure 1"],
+          "confidence": "low",
+          "exceptions": ["only when the materials contain a theory of that scope"]
+        }
+      ]
+    },
+    "methods": {
+      "functions": [
+        {
+          "name": "participants: recruitment, screening, exclusions with reasons, final n with demographics, ethics, consent, safety guidelines",
+          "evidence": ["10.1016/j.cub.2020.02.065 star methods subjects", "10.1038/s41467-023-36805-5 methods participants", "10.1162/imag_a_00349 methods participants"],
+          "confidence": "high",
+          "exceptions": ["reanalysis paper points to source-dataset papers"]
+        },
+        {
+          "name": "chronological procedure with timings, trial counts, counterbalancing",
+          "evidence": ["10.1016/j.cub.2020.02.065 star methods procedure", "10.1038/s41467-023-36805-5 methods procedure", "10.1162/imag_a_00349 methods TMS and EEG"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "acquisition parameters inline with equipment, model, coordinates, targeting",
+          "evidence": ["10.1016/j.cub.2020.02.065 star methods fMRI and TMS", "10.1038/s41467-023-36805-5 methods procedure", "10.1162/imag_a_00349 methods EEG, EMG, TMS"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "ordered preprocessing steps with software versions, thresholds, rejection counts, and code links",
+          "evidence": ["10.1038/s41467-023-36805-5 methods preprocessing", "10.1162/imag_a_00349 methods data analysis", "10.1016/j.cub.2020.02.065 star methods fMRI"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "analysis: measure definitions, model specification, tests with assumption checks and corrections, exploratory labels, rationale for non-obvious choices",
+          "evidence": ["10.1016/j.cub.2020.02.065 star methods quantification", "10.1162/imag_a_00349 methods data analysis", "10.1038/s41467-023-36805-5 methods RSA", "10.1016/j.neuron.2017.06.041 star methods"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "structured methods block with key resources table and availability statements",
+          "evidence": ["10.1016/j.neuron.2017.06.041 star methods", "10.1016/j.cub.2020.02.065 star methods"],
+          "confidence": "medium",
+          "exceptions": ["Cell Press venues only; others use conventional Methods after Discussion"]
+        }
+      ]
+    },
+    "results": {
+      "functions": [
+        {
+          "name": "one subsection per figure or experiment; headers state claims or precise analysis names; order follows hypotheses",
+          "evidence": ["10.1038/s41467-023-36805-5 results headers", "10.1016/j.neuron.2017.06.041 results headers", "10.1162/imag_a_00349 results numbering"],
+          "confidence": "high",
+          "exceptions": ["short report has no subsection headers"]
+        },
+        {
+          "name": "orienting first paragraph with design recap, behavioral sanity checks, and pointers to Methods",
+          "evidence": ["10.1038/s41467-023-36805-5 results p1", "10.1016/j.neuron.2017.06.041 results p1", "10.1162/imag_a_00349 results 3.1 p1"],
+          "confidence": "medium",
+          "exceptions": []
+        },
+        {
+          "name": "paragraph anatomy: aim, approach, result with inline statistics and figure callout, one-sentence takeaway",
+          "evidence": ["10.1016/j.cub.2020.02.065 results paragraphs", "10.1038/s41467-023-36805-5 results paragraphs", "10.1016/j.neuron.2017.06.041 results paragraphs", "10.1162/imag_a_00349 results paragraphs"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "inline statistics with test statistic, degrees of freedom, p, effect size, correction; null results reported with equal completeness",
+          "evidence": ["10.1016/j.cub.2020.02.065 results", "10.1038/s41467-023-36805-5 results", "10.1162/imag_a_00349 results", "10.1016/j.neuron.2017.06.041 results"],
+          "confidence": "high",
+          "exceptions": ["effect sizes omitted in some correlational reports"]
+        },
+        {
+          "name": "control analysis after each primary result; replication reported as replication; exploratory analyses labeled",
+          "evidence": ["10.1016/j.cub.2020.02.065 control analyses", "10.1162/imag_a_00349 experiments B and C", "10.1038/s41467-023-36805-5 exploratory epoch analysis", "10.1016/j.neuron.2017.06.041 model validation"],
+          "confidence": "high",
+          "exceptions": []
+        }
+      ]
+    },
+    "discussion": {
+      "functions": [
+        {
+          "name": "open with a findings-summary paragraph at Results strength, often enumerated",
+          "evidence": ["10.1162/imag_a_00349 discussion p1", "10.1038/s41467-023-36805-5 discussion p1", "10.1016/j.neuron.2017.06.041 discussion p1"],
+          "confidence": "high",
+          "exceptions": ["merged short report summarizes in the closing paragraphs"]
+        },
+        {
+          "name": "relate to prior work as replicated, extended, or not replicated with the specific design difference",
+          "evidence": ["10.1162/imag_a_00349 discussion p2-p3", "10.1038/s41467-023-36805-5 discussion p2-p3", "10.1016/j.neuron.2017.06.041 discussion themed sections"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "state alternatives and what cannot be ruled out, paired with the test that would resolve it",
+          "evidence": ["10.1038/s41467-023-36805-5 discussion recall paragraph", "10.1016/j.cub.2020.02.065 task-general alternative", "10.1162/imag_a_00349 discussion and limitations"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "limitations as four-part units: limitation, consequence for which claim, mitigation, future work",
+          "evidence": ["10.1162/imag_a_00349 limitations section", "10.1038/s41467-023-36805-5 discussion final paragraphs"],
+          "confidence": "high",
+          "exceptions": ["separate numbered Limitations section in one venue; folded elsewhere"]
+        },
+        {
+          "name": "implications stated conditionally for design and interpretation",
+          "evidence": ["10.1162/imag_a_00349 implications section", "10.1016/j.neuron.2017.06.041 discussion final section"],
+          "confidence": "medium",
+          "exceptions": []
+        },
+        {
+          "name": "close with a bounded conclusion paragraph or short section",
+          "evidence": ["10.1038/s41467-023-36805-5 discussion final", "10.1016/j.neuron.2017.06.041 conclusion", "10.1162/imag_a_00349 conclusions", "10.1016/j.cub.2020.02.065 final paragraph"],
+          "confidence": "high",
+          "exceptions": []
+        }
+      ]
+    },
+    "language_style": {
+      "functions": [
+        {
+          "name": "first-person plural voice; past tense for actions and findings, present tense for what evidence shows and for established knowledge",
+          "evidence": ["10.1016/j.neuron.2017.06.041 throughout", "10.1016/j.cub.2020.02.065 throughout", "10.1038/s41467-023-36805-5 throughout", "10.1162/imag_a_00349 throughout"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "concrete opening sentence: aphorism, analogy, lab-versus-life contrast, or technique definition",
+          "evidence": ["10.1038/s41467-023-36805-5 introduction p1", "10.1016/j.neuron.2017.06.041 introduction p1", "10.1162/imag_a_00349 introduction p1"],
+          "confidence": "high",
+          "exceptions": ["short report opens directly on the construct"]
+        },
+        {
+          "name": "contrast pivot at paragraph end naming what remains unresolved",
+          "evidence": ["10.1038/s41467-023-36805-5 introduction", "10.1162/imag_a_00349 introduction", "10.1016/j.neuron.2017.06.041 introduction"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "unresolved question stated as a closed set of alternatives, often three, with conditional predictions before the design",
+          "evidence": ["10.1162/imag_a_00349 abstract and introduction", "10.1038/s41467-023-36805-5 introduction p5", "10.1016/j.cub.2020.02.065 results-and-discussion control paragraph"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "one rhetorical question at a pivot, answered immediately",
+          "evidence": ["10.1038/s41467-023-36805-5 introduction final", "10.1016/j.neuron.2017.06.041 introduction p2 and results hippocampus"],
+          "confidence": "medium",
+          "exceptions": []
+        },
+        {
+          "name": "question-driven paragraph openers in Results echoing hypothesis numbering",
+          "evidence": ["10.1016/j.neuron.2017.06.041 results", "10.1038/s41467-023-36805-5 results", "10.1016/j.cub.2020.02.065 results-and-discussion"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "reasoning stated before the result as an if-then sentence",
+          "evidence": ["10.1162/imag_a_00349 results 3.1.3 and 3.3", "10.1038/s41467-023-36805-5 results epochs", "10.1016/j.cub.2020.02.065 brain-behavior paragraph"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "design-affordance sentence explaining why the method earns the inference",
+          "evidence": ["10.1016/j.cub.2020.02.065 results-and-discussion", "10.1016/j.neuron.2017.06.041 introduction and results", "10.1162/imag_a_00349 results 3.1.2"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "effects reported with direction attached via 'such that' and decomposed via 'driven by'",
+          "evidence": ["10.1016/j.cub.2020.02.065 results", "10.1038/s41467-023-36805-5 results", "10.1016/j.neuron.2017.06.041 results", "10.1162/imag_a_00349 results"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "parallel syntactic frames across analogous results",
+          "evidence": ["10.1038/s41467-023-36805-5 results per-ROI paragraphs", "10.1162/imag_a_00349 results per-site comparisons"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "null results with statistics and numerical direction, followed by a consequence sentence",
+          "evidence": ["10.1016/j.cub.2020.02.065 reaction-time paragraph", "10.1038/s41467-023-36805-5 recall paragraph", "10.1162/imag_a_00349 experiment C"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "pre-emptive control sentence naming the alternative, testing it, and reporting in the same paragraph",
+          "evidence": ["10.1162/imag_a_00349 results 3.1.2 and 3.1.3", "10.1016/j.neuron.2017.06.041 results", "10.1016/j.cub.2020.02.065 control analyses"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "bridging restatement in plain terms for unfamiliar statistics or designs",
+          "evidence": ["10.1016/j.cub.2020.02.065 interaction paragraph", "10.1038/s41467-023-36805-5 results", "10.1016/j.neuron.2017.06.041 results"],
+          "confidence": "medium",
+          "exceptions": []
+        },
+        {
+          "name": "summative closer at the end of every Results paragraph, hedged to the design",
+          "evidence": ["10.1162/imag_a_00349 results", "10.1016/j.cub.2020.02.065 results-and-discussion", "10.1038/s41467-023-36805-5 results", "10.1016/j.neuron.2017.06.041 results"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "replicate, extend, or fail-to-replicate verbs placing findings in the literature with the explaining design difference",
+          "evidence": ["10.1162/imag_a_00349 discussion", "10.1016/j.neuron.2017.06.041 discussion", "10.1038/s41467-023-36805-5 discussion"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "alternative account raised in its own sentence, then tested or bounded, then paired with the resolving experiment",
+          "evidence": ["10.1016/j.cub.2020.02.065 task-general alternative", "10.1038/s41467-023-36805-5 discussion", "10.1162/imag_a_00349 discussion"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "scope disclaimers drawing the claim boundary in the authors' words",
+          "evidence": ["10.1038/s41467-023-36805-5 discussion and results", "10.1162/imag_a_00349 limitations", "10.1016/j.neuron.2017.06.041 discussion"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "multi-line evidence chain enumerated First, Second, Third, Finally",
+          "evidence": ["10.1162/imag_a_00349 discussion and limitations", "10.1016/j.neuron.2017.06.041 introduction hypotheses"],
+          "confidence": "medium",
+          "exceptions": []
+        },
+        {
+          "name": "one calibrated priority claim per paper, only where the design earns it",
+          "evidence": ["10.1016/j.neuron.2017.06.041 introduction final and discussion p1", "10.1016/j.cub.2020.02.065 summary"],
+          "confidence": "medium",
+          "exceptions": ["methods-focused paper uses 'further evidence' throughout"]
+        },
+        {
+          "name": "big-picture closing paragraph stating a principle with a modal verb",
+          "evidence": ["10.1016/j.cub.2020.02.065 final paragraph", "10.1038/s41467-023-36805-5 discussion final", "10.1016/j.neuron.2017.06.041 conclusion"],
+          "confidence": "high",
+          "exceptions": ["methods-focused paper closes on implications for study design"]
+        },
+        {
+          "name": "attention markers rationed to one to three per section",
+          "evidence": ["10.1016/j.cub.2020.02.065 throughout", "10.1038/s41467-023-36805-5 throughout", "10.1162/imag_a_00349 throughout", "10.1016/j.neuron.2017.06.041 throughout"],
+          "confidence": "high",
+          "exceptions": []
+        },
+        {
+          "name": "rationale voice in Methods and candor about control weaknesses",
+          "evidence": ["10.1162/imag_a_00349 methods TMS", "10.1016/j.cub.2020.02.065 star methods", "10.1038/s41467-023-36805-5 methods RSA"],
+          "confidence": "high",
+          "exceptions": []
+        }
+      ]
+    },
+    "figure_legends": {
+      "functions": [
+        {
+          "name": "title sentence, panel-by-panel description, error-bar definition, n, significance markers, supplementary cross-references",
+          "evidence": ["10.1016/j.neuron.2017.06.041 figure legends", "10.1016/j.cub.2020.02.065 figure legends", "10.1038/s41467-023-36805-5 figure legends", "10.1162/imag_a_00349 figure legends"],
+          "confidence": "high",
+          "exceptions": []
+        }
+      ]
+    }
+  },
+  "validated": true,
+  "validation_note": "Functions labeled high were checked across all four sources; cross-source agreement was used as the validation set because no held-out paper was supplied. No paragraph text, phrases, claims, or citations from the sources are stored."
+}
